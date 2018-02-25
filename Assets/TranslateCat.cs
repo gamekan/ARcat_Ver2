@@ -19,6 +19,7 @@ public class TranslateCat : MonoBehaviour {
     public IEnumerator MoveCat(Vector3 targetPos) {
 
         float lerpCount = 0;
+        float distance = Vector3.Distance(transform.position, targetPos);
 
         while (true)
         {
@@ -27,7 +28,7 @@ public class TranslateCat : MonoBehaviour {
 
             transform.position = currPos;
 
-            lerpCount += Time.deltaTime / 5.0f;
+            lerpCount += Time.deltaTime / (distance * 10.0f);
 
             if(lerpCount >= 1)
             {

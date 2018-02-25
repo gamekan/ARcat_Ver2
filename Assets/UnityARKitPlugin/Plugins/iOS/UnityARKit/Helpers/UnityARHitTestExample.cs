@@ -42,7 +42,7 @@ namespace UnityEngine.XR.iOS
 
                     m_HitTransform.GetChild(0).transform.forward = targetDir;
 
-
+                    
                     transform.GetComponent<TranslateCat>().StopAllCoroutines();
                     StartCoroutine(transform.GetComponent<TranslateCat>().MoveCat(hit.point));
 
